@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>To My Most Beloved</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ENVELOPE INTRO -->
+<div id="envelope-screen">
+    <div class="envelope" onclick="openEnvelope()">
+        <div class="flap"></div>
+        <div class="letter-inside">Click to Open</div>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main-content" style="display:none;">
+
+<audio autoplay loop>
+    <source src="music/background.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <h1 class="title">To My Most Beloved</h1>
+
+    <p class="typewriter"
+       data-text="My dearest Honey, I offer thine humble creation, written as though beneath candlelight in an age long past...">
+    </p>
+
+    <div class="buttons">
+        <a href="letters.html">My Letters</a>
+        <a href="songs.html">Songs of My Heart</a>
+    </div>
+
+    <div class="password-box">
+        <p>Enter the sacred word:</p>
+        <p>(Hint: It is the day you said yes to me <3)</p>
+        <input type="password" id="passwordInput" placeholder="Enter password">
+        <button onclick="checkPassword()">Unlock</button>
+    </div>
+</div>
+</div>
+
+<!-- Typing Sound -->
+<audio id="typingSound" preload="auto">
+    <source src="music/typing.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    background-color: #f4ecd8;
+    background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
+    color: #3e2f1c;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container { padding: 50px; }
+
+.title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+}
+
+/* ENVELOPE */
+#envelope-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #f4ecd8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.envelope {
+    width: 250px;
+    height: 150px;
+    background: #5c3b1e;
+    position: relative;
+    cursor: pointer;
+}
+
+.flap {
+    width: 0;
+    height: 0;
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+    border-bottom: 75px solid #7a4f28;
+    position: absolute;
+    top: -75px;
+}
+
+.letter-inside {
+    color: white;
+    padding-top: 60px;
+}
+
+.parchment {
+    background-color: #f8f1e4;
+    border: 2px solid #5c3b1e;
+    padding: 40px;
+}
+
+.buttons a {
+    display: inline-block;
+    margin: 15px;
+    padding: 10px 20px;
+    background: #5c3b1e;
+    color: white;
+    text-decoration: none;
+}
+
+.song-card { margin-bottom: 60px; }
+
+/* VINYL */
+.vinyl-player { margin: 20px auto; }
+
+.vinyl {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #111 40%, #222 60%, #000 100%);
+    border-radius: 50%;
+    margin: auto;
+}
+
+.spin { animation: spin 2s linear infinite; }
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* FLOATING HEARTS */
+.heart {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 80, 120, 0.8);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 80, 120, 0.8);
+  border-radius: 50%;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+}
+
+/* =========================
+   OLD INK WRITING EFFECT
+========================= */
+
+.typewriter {
+    font-family: 'Great Vibes', cursive;
+    font-size: 26px;
+    line-height: 1.8;
+    white-space: pre-line;
+}
+
+.ink-char {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(5px);
+    transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
+}
+
+.ink-char.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+
