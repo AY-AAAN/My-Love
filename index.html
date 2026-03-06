@@ -16,20 +16,28 @@
 </div>
 
 <div id="main-content" style="display:none; opacity: 0;">
-    <div class="container">
+    <audio id="bgMusic" loop>
+        <source src="music/background.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container parchment">
         <h1 class="title">To My Most Beloved</h1>
-        <p class="typewriter" data-text="My dearest Honey, I offer thine humble creation, written as though beneath candlelight in an age long past..."></p>
+        
+        <h2 style="font-family: 'Great Vibes', cursive; color: #6b527e;">My Dearest Honey,</h2>
+
+        <p class="typewriter" data-text="I offer thine humble creation, written as though beneath candlelight in an age long past. Every word here is a piece of my soul kept just for you...">
+        </p>
 
         <div class="buttons">
             <a href="letters.html">My Letters</a>
             <a href="songs.html">Songs of My Heart</a>
         </div>
 
-        <div class="password-box parchment">
+        <div class="password-box" style="margin-top: 30px; border-top: 1px solid #ddd; padding-top: 20px;">
             <p>Enter the sacred word:</p>
-            <p style="font-size: 0.8rem; color: #6b527e;">(Hint: The day you said yes — MMDDYY)</p>
-            <input type="password" id="passwordInput" placeholder="021026">
-            <button onclick="checkPassword()">Unlock</button>
+            <input type="password" id="passwordInput" placeholder="MMDDYY">
+            <br>
+            <button onclick="checkPassword()">Unlock Secret</button>
         </div>
     </div>
 </div>
