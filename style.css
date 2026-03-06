@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL STYLES & PARCHMENT
+   ========================= */
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
@@ -8,113 +11,153 @@ body {
     overflow-x: hidden;
 }
 
-.container { padding: 50px; }
-
-.title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 60px;
-}
-
-/* ENVELOPE */
-#envelope-screen {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: #f4ecd8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.envelope {
-    width: 250px;
-    height: 150px;
-    background: #5c3b1e;
-    position: relative;
-    cursor: pointer;
-}
-
-.flap {
-    width: 0;
-    height: 0;
-    border-left: 125px solid transparent;
-    border-right: 125px solid transparent;
-    border-bottom: 75px solid #7a4f28;
-    position: absolute;
-    top: -75px;
-}
-
-.letter-inside {
-    color: white;
-    padding-top: 60px;
+.container { 
+    padding: 50px; 
+    max-width: 800px;
+    margin: auto;
 }
 
 .parchment {
     background-color: #f8f1e4;
     border: 2px solid #5c3b1e;
     padding: 40px;
+    box-shadow: inset 0 0 100px rgba(92, 59, 30, 0.1), 0 10px 30px rgba(0,0,0,0.2);
 }
 
-.buttons a {
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+/* =========================
+   SONG CARDS
+   ========================= */
+.song-card { 
+    margin-bottom: 80px; 
+    padding: 20px;
+    border-bottom: 1px double #5c3b1e;
+}
+
+.song-card h2 {
+    margin-bottom: 5px;
+    font-size: 28px;
+}
+
+.artist {
+    font-style: italic;
+    margin-top: 0;
+    color: #7a4f28;
+}
+
+.song-description {
+    font-family: 'Great Vibes', cursive;
+    font-size: 22px;
+    max-width: 500px;
+    margin: 20px auto;
+    line-height: 1.4;
+}
+
+/* =========================
+   REALISTIC VINYL DESIGN
+   ========================= */
+.vinyl-player { 
+    margin: 30px auto; 
+    width: 180px;
+    height: 180px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vinyl {
+    width: 170px;
+    height: 170px;
+    /* This creates the grooved record texture */
+    background: radial-gradient(circle, 
+        #444 2%, 
+        #111 4%, 
+        #111 12%, 
+        #222 13%, 
+        #111 20%, 
+        #222 21%, 
+        #111 30%, 
+        #8b0000 31%, /* Deep Red Label */
+        #a52a2a 45%, 
+        #000 46%);
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    position: relative;
+    border: 3px solid #000;
+}
+
+/* Glossy Shine Overlay */
+.vinyl::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.15) 100%);
+    pointer-events: none;
+}
+
+/* Center Hole */
+.vinyl::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: #f4ecd8;
+    border-radius: 50%;
+    border: 1px solid #333;
+}
+
+.spin { 
+    animation: spin 3s linear infinite; 
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* =========================
+   BUTTONS & NAVIGATION
+   ========================= */
+button {
+    background: #5c3b1e;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background: #7a4f28;
+    transform: translateY(-2px);
+}
+
+.back {
     display: inline-block;
-    margin: 15px;
+    margin-top: 40px;
     padding: 10px 20px;
     background: #5c3b1e;
     color: white;
     text-decoration: none;
-}
-
-.song-card { margin-bottom: 60px; }
-
-/* VINYL */
-.vinyl-player { margin: 20px auto; }
-
-.vinyl {
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, #111 40%, #222 60%, #000 100%);
-    border-radius: 50%;
-    margin: auto;
-}
-
-.spin { animation: spin 2s linear infinite; }
-
-@keyframes spin {
-    100% { transform: rotate(360deg); }
-}
-
-/* FLOATING HEARTS */
-.heart {
-  position: fixed;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(255, 80, 120, 0.8);
-  transform: rotate(45deg);
-  pointer-events: none;
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background-color: rgba(255, 80, 120, 0.8);
-  border-radius: 50%;
-}
-
-.heart::before { top: -10px; left: 0; }
-.heart::after { left: -10px; top: 0; }
-
-@keyframes floatUp {
-  0% { transform: translateY(0) rotate(45deg); opacity: 1; }
-  100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+    border-radius: 5px;
 }
 
 /* =========================
-   OLD INK WRITING EFFECT
-========================= */
-
+   TYPEWRITER / INK EFFECT
+   ========================= */
 .typewriter {
     font-family: 'Great Vibes', cursive;
     font-size: 26px;
@@ -135,4 +178,28 @@ body {
     transform: translateY(0);
 }
 
+/* =========================
+   FLOATING HEARTS
+   ========================= */
+.heart {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 80, 120, 0.6);
+    transform: rotate(45deg);
+    pointer-events: none;
+    z-index: 999;
+}
 
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
