@@ -1,10 +1,10 @@
-/* GLOBAL STYLES & PARCHMENT */
+/* GLOBAL STYLES & PURPLE PARCHMENT */
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
-    background-color: #f4ecd8;
+    background-color: #f2eef5; /* Very soft lavender tint */
     background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
-    color: #3e2f1c;
+    color: #3b2a4a; /* Deep plum text */
     text-align: center;
     overflow-x: hidden;
 }
@@ -12,24 +12,24 @@ body {
 .container { padding: 50px; max-width: 800px; margin: auto; }
 
 .parchment {
-    background-color: #f8f1e4;
-    border: 2px solid #5c3b1e;
+    background-color: #faf7fd; /* Soft lilac white */
+    border: 2px solid #6b527e; /* Dusty purple border */
     padding: 40px;
-    box-shadow: inset 0 0 100px rgba(92, 59, 30, 0.1), 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: inset 0 0 100px rgba(107, 82, 126, 0.1), 0 10px 30px rgba(0,0,0,0.15);
 }
 
 /* ENVELOPE SCREEN */
 #envelope-screen {
     position: fixed;
     width: 100%; height: 100%;
-    background: #f4ecd8;
+    background: #f2eef5;
     display: flex; justify-content: center; align-items: center;
     z-index: 1000;
 }
 
 .envelope {
     width: 250px; height: 150px;
-    background: #5c3b1e;
+    background: #6b527e; /* Dusty purple envelope */
     position: relative; cursor: pointer;
 }
 
@@ -37,14 +37,18 @@ body {
     width: 0; height: 0;
     border-left: 125px solid transparent;
     border-right: 125px solid transparent;
-    border-bottom: 75px solid #7a4f28;
+    border-bottom: 75px solid #8e73a6; /* Lighter purple flap */
     position: absolute; top: -75px;
 }
 
 .letter-inside { color: white; padding-top: 60px; font-size: 14px; }
 
 /* VINYL PLAYER */
-.song-card { margin-bottom: 80px; padding-bottom: 20px; border-bottom: 1px solid rgba(92, 59, 30, 0.2); }
+.song-card { 
+    margin-bottom: 80px; 
+    padding-bottom: 20px; 
+    border-bottom: 1px solid rgba(107, 82, 126, 0.2); 
+}
 
 .vinyl-player {
     margin: 20px auto;
@@ -54,7 +58,8 @@ body {
 
 .vinyl {
     width: 100%; height: 100%;
-    background: radial-gradient(circle, #444 2%, #111 5%, #111 20%, #222 21%, #111 35%, #c0392b 36%, #a52a2a 48%, #000 50%);
+    /* Vinyl shine with a purple label in the center */
+    background: radial-gradient(circle, #444 2%, #111 5%, #111 20%, #222 21%, #111 35%, #8e73a6 36%, #6b527e 48%, #000 50%);
     border-radius: 50%;
     border: 3px solid #000;
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
@@ -66,7 +71,7 @@ body {
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
     width: 10px; height: 10px;
-    background: #f4ecd8; border-radius: 50%;
+    background: #f2eef5; border-radius: 50%;
 }
 
 .spin { animation: spin 3s linear infinite; }
@@ -76,11 +81,11 @@ body {
     to { transform: rotate(360deg); }
 }
 
-.yt-placeholder { display: none; } /* Keeps YouTube hidden */
+.yt-placeholder { display: none; } 
 
 /* BUTTONS */
 .play-btn {
-    background: #5c3b1e;
+    background: #6b527e;
     color: white;
     border: none;
     padding: 10px 30px;
@@ -90,12 +95,12 @@ body {
     transition: 0.3s;
 }
 
-.play-btn:hover { background: #7a4f28; }
+.play-btn:hover { background: #8e73a6; }
 
-/* FLOATING HEARTS */
+/* FLOATING HEARTS (Soft Purple/Pink) */
 .heart {
     position: fixed; width: 20px; height: 20px;
-    background-color: rgba(255, 80, 120, 0.6);
+    background-color: rgba(160, 120, 255, 0.5); /* Lavender hearts */
     transform: rotate(45deg); pointer-events: none;
 }
 .heart::before, .heart::after {
@@ -111,5 +116,5 @@ body {
 }
 
 /* TYPEWRITER */
-.ink-char { opacity: 0; transition: 0.4s; }
+.ink-char { opacity: 0; transition: 0.4s; color: #4b3a5a; }
 .ink-char.show { opacity: 1; }
