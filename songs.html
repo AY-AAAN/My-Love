@@ -1,203 +1,184 @@
-<div class="container parchment">
+<div class="container parchment" id="main-content" style="display:none;">
     <h1>Songs I Offer Unto Thee</h1>
 
-    <div class="song-card">
-        <h2>When I Met You</h2>
-        <p class="artist">APO Hiking Society</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/When-I-Met-You.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">This melody reminds me of the day you and I started to talk and how much you changed my life.</p>
-    </div>
+    <div id="song-list">
+        <div class="song-card" data-video-id="fR6f_iVfH68">
+            <h2>When I Met You</h2><p class="artist">APO Hiking Society</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">This melody reminds me of the day you and I started to talk.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Until I Found You</h2>
-        <p class="artist">Stephen Sanchez</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Until-I-Found-You.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">This reminds me of the day we became sweet to one another and gave me this sense of longing.</p>
-    </div>
+        <div class="song-card" data-video-id="GxldQ9GyXQM">
+            <h2>Until I Found You</h2><p class="artist">Stephen Sanchez</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">This reminds me of the day we became sweet to one another.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>I've Fallen for You</h2>
-        <p class="artist">Jamie Rivera</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/I've-Fallen-for-You.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">This melody expresses how I have fallen for the person who I will make my wife.</p>
-    </div>
+        <div class="song-card" data-video-id="eD47T4u_7hE">
+            <h2>I've Fallen for You</h2><p class="artist">Jamie Rivera</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">This melody expresses how I have fallen for my future wife.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Fallen</h2>
-        <p class="artist">Lola Amour</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Fallen.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">This melody expresses how I would have told you how I have fallen in love with you.</p>
-    </div>
+        <div class="song-card" data-video-id="F0mI0uA_f_0">
+            <h2>Fallen</h2><p class="artist">Lola Amour</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">How I would have told you I've fallen in love with you.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>How Deep Is Your Love</h2>
-        <p class="artist">Bee Gees</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/How-Deep-Is-Your-Love.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">This melody expresses how I want to love you and study how you love.</p>
-    </div>
+        <div class="song-card" data-video-id="XpqqjU7u5Yc">
+            <h2>How Deep Is Your Love</h2><p class="artist">Bee Gees</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">How I want to love you and study how you want to be loved.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Maybe We Could Be A Thing</h2>
-        <p class="artist">Jesse Barrera & Michael Carreon</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Maybe-We-Could-Be-a-Thing.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">What plays in my head when we are talking being sweet with one another.</p>
-    </div>
+        <div class="song-card" data-video-id="FpIOnvUOf7w">
+            <h2>Maybe We Could Be A Thing</h2><p class="artist">Jesse Barrera & Michael Carreon</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">What plays in my head when we are being sweet with one another.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>The Only Exception</h2>
-        <p class="artist">Paramore</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/The-Only-Exception.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">You are the only exception to every rule I had about love.</p>
-    </div>
+        <div class="song-card" data-video-id="-J7J_IWUhls">
+            <h2>The Only Exception</h2><p class="artist">Paramore</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">You are the only exception to everything I thought I knew.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Saving All My Love For You</h2>
-        <p class="artist">Whitney Houston</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Saving-All-My-Love-for-You.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">I give you all the love and support you need, saving it all for you.</p>
-    </div>
+        <div class="song-card" data-video-id="ewxmv2tyeRs">
+            <h2>Saving All My Love For You</h2><p class="artist">Whitney Houston</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">I give you all the love and support you need.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Ikaw Lang</h2>
-        <p class="artist">Nobita</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/IKAW-LANG.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">You are the only thing I need as you make me complete.</p>
-    </div>
+        <div class="song-card" data-video-id="qY_V5oXfA-k">
+            <h2>Ikaw Lang</h2><p class="artist">Nobita</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">You are the only thing I need as you make me complete.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Make It With You</h2>
-        <p class="artist">Bread</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Make-It-with-You.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">I would like to make it with you till death and beyond.</p>
-    </div>
+        <div class="song-card" data-video-id="sO9CBn055_E">
+            <h2>Make It With You</h2><p class="artist">Bread</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">I would like to make it with you till death.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>The Most Beautiful Thing</h2>
-        <p class="artist">Bruno Major</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/The-Most-Beautiful-Thing.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">You are the best thing that has ever entered my life baby.</p>
-    </div>
+        <div class="song-card" data-video-id="Y-fF0_iYI_I">
+            <h2>The Most Beautiful Thing</h2><p class="artist">Bruno Major</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">You are the best thing that has ever entered my life baby.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Hopelessly Devoted To You</h2>
-        <p class="artist">Olivia Newton-John</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Hopelessly-Devoted-To-You.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">I am devoting my entire life to you.</p>
-    </div>
+        <div class="song-card" data-video-id="SN1gi8oq7Vg">
+            <h2>Hopelessly Devoted To You</h2><p class="artist">Olivia Newton-John</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">I am devoting my entire life to you.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Those Eyes</h2>
-        <p class="artist">New West</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Those-Eyes.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">Whenever I see your photos, I think of how beautiful my wife is.</p>
-    </div>
+        <div class="song-card" data-video-id="6U78HscT9I0">
+            <h2>Those Eyes</h2><p class="artist">New West</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">Thinking of how beautiful my wife is.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Can't Take My Eyes Off You</h2>
-        <p class="artist">Frankie Valli</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Can't-Take-My-Eyes-off-You.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">I look at my lockscreen and miss you whenever we are apart.</p>
-    </div>
+        <div class="song-card" data-video-id="LcC5ux9_O_M">
+            <h2>Can't Take My Eyes Off You</h2><p class="artist">Frankie Valli</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">Looking at your photos missing you.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Panalangin</h2>
-        <p class="artist">APO Hiking Society</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Panalangin.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">Ikaw ang aking panalangin sa habang buhay.</p>
-    </div>
+        <div class="song-card" data-video-id="5X_3AUKp_3s">
+            <h2>Panalangin</h2><p class="artist">APO Hiking Society</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">Ikaw ang aking panalangin sa habang buhay.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Hanggang Kailan</h2>
-        <p class="artist">Orange & Lemons</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Hanggang-Kailan.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">Waiting for the day I hear you say "Honey, I'm home."</p>
-    </div>
+        <div class="song-card" data-video-id="u9_M90_hI_c">
+            <h2>Hanggang Kailan</h2><p class="artist">Orange & Lemons</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">I can't wait to hear "honey I'm home".</p>
+        </div>
 
-    <div class="song-card">
-        <h2>I Won't Last A Day Without You</h2>
-        <p class="artist">Carpenters</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/I-Won't-Last-A-Day-Without-You.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">I can't even last a few minutes without you.</p>
-    </div>
+        <div class="song-card" data-video-id="M-jE5v3G3_Q">
+            <h2>I Won't Last A Day Without You</h2><p class="artist">Carpenters</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">I can't even last a few minutes without you.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>LDR</h2>
-        <p class="artist">Shoti</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/LDR.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">I wish soon our LDR ends and we see each other every day.</p>
-    </div>
+        <div class="song-card" data-video-id="yL90V0D3944">
+            <h2>LDR</h2><p class="artist">Shoti</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">Wish soon we get to see each other every day.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Nothing</h2>
-        <p class="artist">Bruno Major</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Nothing.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">Even if we do nothing, just being with you makes me the happiest.</p>
-    </div>
+        <div class="song-card" data-video-id="SwaFmP_O3eM">
+            <h2>Nothing</h2><p class="artist">Bruno Major</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">Being with you makes me the happiest.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Libu-libong Buwan</h2>
-        <p class="artist">Kyle Raphael</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Libu-Libong-Buwan.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">You sang this to me once, and now it is forever special.</p>
-    </div>
+        <div class="song-card" data-video-id="v-nU62F-0_o">
+            <h2>Libu-libong Buwan</h2><p class="artist">Kyle Raphael</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">This song is forever special for me.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Yakapsule</h2>
-        <p class="artist">Rob Deniel</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Yakapsule.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">All I need through every struggle is you here with me.</p>
-    </div>
+        <div class="song-card" data-video-id="624T9-D6N20">
+            <h2>Yakapsule</h2><p class="artist">Rob Deniel</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">The only thing I need through every struggle is you.</p>
+        </div>
 
-    <div class="song-card">
-        <h2>Tahanan</h2>
-        <p class="artist">Adie</p>
-        <div class="vinyl-player"><div class="vinyl"></div></div>
-        <audio class="romantic-song"><source src="music/Tahanan.mp3" type="audio/mpeg"></audio>
-        <button onclick="playSong(this)">Play</button>
-        <p class="song-description">I will marry you, my honey. You are my home.</p>
+        <div class="song-card" data-video-id="mXyG97t6E_k">
+            <h2>Tahanan</h2><p class="artist">Adie</p>
+            <div class="vinyl-player"><div class="vinyl"></div></div>
+            <div class="yt-placeholder"></div>
+            <button class="play-btn" onclick="togglePlay(this)">Play</button>
+            <p class="song-description">I will marry you, my honey.</p>
+        </div>
     </div>
-
+    
     <a href="index.html" class="back">Return Home</a>
 </div>
+<script src="https://www.youtube.com/iframe_api"></script>
