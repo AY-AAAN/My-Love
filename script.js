@@ -1,51 +1,36 @@
 let players = {};
-let hasWritten = false;
 
-// 1. INITIALIZE YOUTUBE PLAYERS
+// 1. YouTube API Ready
 function onYouTubeIframeAPIReady() {
     document.querySelectorAll('.song-card').forEach((card, index) => {
         const videoId = card.getAttribute('data-video-id');
         const placeholder = card.querySelector('.yt-placeholder');
+        if (!placeholder) return;
         const playerId = "player-" + index;
         placeholder.id = playerId;
 
         players[playerId] = new YT.Player(playerId, {
-            height: '0',
-            width: '0',
-            videoId: videoId,
-            playerVars: { 'autoplay': 0, 'controls': 0, 'rel': 0 },
-            events: {
-                'onStateChange': (event) => onPlayerStateChange(event, card)
-            }
+            height: '0', width: '0', videoId: videoId,
+            playerVars: { 'autoplay': 0, 'controls': 0 },
+            events: { 'onStateChange': (event) => onPlayerStateChange(event, card) }
         });
         card.querySelector('.play-btn').setAttribute('data-target', playerId);
     });
 }
 
-// 2. PLAY/PAUSE LOGIC
+// 2. Play/Pause
 function togglePlay(button) {
     const playerId = button.getAttribute('data-target');
     const player = players[playerId];
-
-    // Stop all other songs to prevent overlapping
     Object.keys(players).forEach(id => {
-        if (id !== playerId && players[id].getPlayerState() === 1) {
-            players[id].pauseVideo();
-        }
+        if (id !== playerId && players[id].getPlayerState() === 1) players[id].pauseVideo();
     });
-
-    if (player.getPlayerState() === 1) {
-        player.pauseVideo();
-    } else {
-        player.playVideo();
-    }
+    player.getPlayerState() === 1 ? player.pauseVideo() : player.playVideo();
 }
 
-// 3. SYNC VINYL SPIN WITH YOUTUBE STATE
 function onPlayerStateChange(event, card) {
     const vinyl = card.querySelector('.vinyl');
     const btn = card.querySelector('.play-btn');
-
     if (event.data === YT.PlayerState.PLAYING) {
         vinyl.classList.add('spin');
         btn.innerText = "Pause";
@@ -55,14 +40,29 @@ function onPlayerStateChange(event, card) {
     }
 }
 
-// 4. ENVELOPE & UI LOGIC
+// 3. FIX: Show Content Logic
 function openEnvelope() {
-    document.getElementById("envelope-screen").style.display = "none";
+    const env = document.getElementById("envelope-screen");
     const main = document.getElementById("main-content");
-    main.style.display = "block";
+    if (env) env.style.display = "none";
+    if (main) {
+        main.style.display = "block";
+        main.style.opacity = "1";
+    }
 }
 
-// 5. FLOATING LAVENDER HEARTS
+// Auto-reveal if no envelope exists (fixes white screen on song.html)
+window.onload = function() {
+    if (!document.getElementById("envelope-screen")) {
+        const main = document.getElementById("main-content");
+        if (main) {
+            main.style.display = "block";
+            main.style.opacity = "1";
+        }
+    }
+};
+
+// 4. Hearts
 function createHeart() {
     const heart = document.createElement("div");
     heart.className = "heart";
@@ -73,12 +73,9 @@ function createHeart() {
 }
 setInterval(createHeart, 800);
 
-// 6. PASSWORD LOGIC
+// 5. Password
 function checkPassword() {
-    const password = document.getElementById("passwordInput").value;
-    if (password === "021026") {
-        window.location.href = "secret.html";
-    } else {
-        alert("That is not the sacred word, my love ❤️");
-    }
+    const pw = document.getElementById("passwordInput").value;
+    if (pw === "021026") window.location.href = "secret.html";
+    else alert("That is not the sacred word, my love ❤️");
 }
