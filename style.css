@@ -1,6 +1,4 @@
-/* =========================
-   GLOBAL STYLES & PARCHMENT
-   ========================= */
+/* GLOBAL STYLES & PARCHMENT */
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
@@ -11,11 +9,7 @@ body {
     overflow-x: hidden;
 }
 
-.container { 
-    padding: 50px; 
-    max-width: 800px;
-    margin: auto;
-}
+.container { padding: 50px; max-width: 800px; margin: auto; }
 
 .parchment {
     background-color: #f8f1e4;
@@ -24,111 +18,68 @@ body {
     box-shadow: inset 0 0 100px rgba(92, 59, 30, 0.1), 0 10px 30px rgba(0,0,0,0.2);
 }
 
-h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 50px;
-    margin-bottom: 40px;
+/* ENVELOPE SCREEN */
+#envelope-screen {
+    position: fixed;
+    width: 100%; height: 100%;
+    background: #f4ecd8;
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000;
 }
 
-/* =========================
-   SONG CARDS
-   ========================= */
-.song-card { 
-    margin-bottom: 80px; 
-    padding: 20px;
-    border-bottom: 1px double #5c3b1e;
+.envelope {
+    width: 250px; height: 150px;
+    background: #5c3b1e;
+    position: relative; cursor: pointer;
 }
 
-.song-card h2 {
-    margin-bottom: 5px;
-    font-size: 28px;
+.flap {
+    width: 0; height: 0;
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+    border-bottom: 75px solid #7a4f28;
+    position: absolute; top: -75px;
 }
 
-.artist {
-    font-style: italic;
-    margin-top: 0;
-    color: #7a4f28;
-}
+.letter-inside { color: white; padding-top: 60px; font-size: 14px; }
 
-.song-description {
-    font-family: 'Great Vibes', cursive;
-    font-size: 22px;
-    max-width: 500px;
+/* VINYL PLAYER */
+.song-card { margin-bottom: 80px; padding-bottom: 20px; border-bottom: 1px solid rgba(92, 59, 30, 0.2); }
+
+.vinyl-player {
     margin: 20px auto;
-    line-height: 1.4;
-}
-
-/* =========================
-   REALISTIC VINYL DESIGN
-   ========================= */
-.vinyl-player { 
-    margin: 30px auto; 
-    width: 180px;
-    height: 180px;
+    width: 160px; height: 160px;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .vinyl {
-    width: 170px;
-    height: 170px;
-    /* This creates the grooved record texture */
-    background: radial-gradient(circle, 
-        #444 2%, 
-        #111 4%, 
-        #111 12%, 
-        #222 13%, 
-        #111 20%, 
-        #222 21%, 
-        #111 30%, 
-        #8b0000 31%, /* Deep Red Label */
-        #a52a2a 45%, 
-        #000 46%);
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, #444 2%, #111 5%, #111 20%, #222 21%, #111 35%, #c0392b 36%, #a52a2a 48%, #000 50%);
     border-radius: 50%;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    position: relative;
     border: 3px solid #000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    position: relative;
 }
 
-/* Glossy Shine Overlay */
-.vinyl::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.15) 100%);
-    pointer-events: none;
-}
-
-/* Center Hole */
 .vinyl::after {
     content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-    width: 10px;
-    height: 10px;
-    background: #f4ecd8;
-    border-radius: 50%;
-    border: 1px solid #333;
+    width: 10px; height: 10px;
+    background: #f4ecd8; border-radius: 50%;
 }
 
-.spin { 
-    animation: spin 3s linear infinite; 
-}
+.spin { animation: spin 3s linear infinite; }
 
 @keyframes spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-/* =========================
-   BUTTONS & NAVIGATION
-   ========================= */
-button {
+.yt-placeholder { display: none; } /* Keeps YouTube hidden */
+
+/* BUTTONS */
+.play-btn {
     background: #5c3b1e;
     color: white;
     border: none;
@@ -136,70 +87,29 @@ button {
     font-family: 'Cinzel', serif;
     cursor: pointer;
     border-radius: 5px;
-    transition: all 0.3s ease;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    transition: 0.3s;
 }
 
-button:hover {
-    background: #7a4f28;
-    transform: translateY(-2px);
-}
+.play-btn:hover { background: #7a4f28; }
 
-.back {
-    display: inline-block;
-    margin-top: 40px;
-    padding: 10px 20px;
-    background: #5c3b1e;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* =========================
-   TYPEWRITER / INK EFFECT
-   ========================= */
-.typewriter {
-    font-family: 'Great Vibes', cursive;
-    font-size: 26px;
-    line-height: 1.8;
-    white-space: pre-line;
-}
-
-.ink-char {
-    opacity: 0;
-    filter: blur(2px);
-    transform: translateY(5px);
-    transition: opacity 0.4s ease, filter 0.4s ease, transform 0.4s ease;
-}
-
-.ink-char.show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-}
-
-/* =========================
-   FLOATING HEARTS
-   ========================= */
+/* FLOATING HEARTS */
 .heart {
-    position: fixed;
-    width: 20px;
-    height: 20px;
+    position: fixed; width: 20px; height: 20px;
     background-color: rgba(255, 80, 120, 0.6);
-    transform: rotate(45deg);
-    pointer-events: none;
-    z-index: 999;
+    transform: rotate(45deg); pointer-events: none;
 }
-
-.heart::before,
-.heart::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: inherit;
-    border-radius: 50%;
+.heart::before, .heart::after {
+    content: ""; position: absolute; width: 20px; height: 20px;
+    background-color: inherit; border-radius: 50%;
 }
-
 .heart::before { top: -10px; left: 0; }
 .heart::after { left: -10px; top: 0; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+}
+
+/* TYPEWRITER */
+.ink-char { opacity: 0; transition: 0.4s; }
+.ink-char.show { opacity: 1; }
