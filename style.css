@@ -1,4 +1,4 @@
-/* GLOBAL STYLES & PURPLE THEME */
+/* GLOBAL STYLES */
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
@@ -6,91 +6,112 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
     color: #3b2a4a;
     text-align: center;
-    overflow-x: hidden;
 }
 
-.container { padding: 50px; max-width: 800px; margin: auto; }
+.container { padding: 40px 20px; max-width: 800px; margin: auto; }
 
-/* The "Purple" Letter Look */
 .parchment {
-    background-color: #e6e0f0; /* Soft Purple Letter Background */
+    background-color: #fdfbff;
     border: 3px double #6b527e;
-    padding: 40px;
-    box-shadow: inset 0 0 100px rgba(107, 82, 126, 0.2), 0 10px 30px rgba(0,0,0,0.15);
-    border-radius: 5px;
-    margin-top: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(107, 82, 126, 0.2);
+    border-radius: 15px;
+    margin-bottom: 30px;
 }
 
-/* ELEGANT BUTTON DESIGN */
-.buttons a, .play-btn, button {
+/* --- THE ACTUAL BUTTON BOX DESIGN --- */
+.buttons a, .play-btn, button, .back {
     display: inline-block;
-    background: #6b527e;
+    background: #7b5ea0; /* Deep Purple */
     color: #ffffff !important;
     text-decoration: none;
-    padding: 12px 25px;
+    padding: 15px 30px;
     margin: 10px;
     font-family: 'Cinzel', serif;
     font-weight: bold;
-    border: 1px solid #4b3a5a;
-    border-radius: 4px;
-    box-shadow: 3px 3px 0px #4b3a5a;
-    transition: all 0.2s ease;
+    border: 2px solid #4b3a5a;
+    border-radius: 10px;
     cursor: pointer;
+    position: relative;
+    /* Box Look */
+    box-shadow: 0px 6px 0px #4b3a5a;
+    transition: all 0.1s ease;
 }
 
-.buttons a:hover, .play-btn:hover, button:hover {
+.buttons a:hover, .play-btn:hover, button:hover, .back:hover {
     background: #8e73a6;
-    transform: translate(-2px, -2px);
-    box-shadow: 5px 5px 0px #4b3a5a;
+    transform: translateY(-2px);
+    box-shadow: 0px 8px 0px #4b3a5a;
 }
 
-.buttons a:active {
-    transform: translate(1px, 1px);
-    box-shadow: 1px 1px 0px #4b3a5a;
+.buttons a:active, .play-btn:active, button:active, .back:active {
+    transform: translateY(4px);
+    box-shadow: 0px 2px 0px #4b3a5a;
 }
 
-/* ENVELOPE SCREEN */
+/* ENVELOPE */
 #envelope-screen {
     position: fixed;
+    top: 0; left: 0;
     width: 100%; height: 100%;
     background: #f2eef5;
     display: flex; justify-content: center; align-items: center;
-    z-index: 1000;
+    z-index: 2000;
 }
 
 .envelope {
-    width: 280px; height: 180px;
+    width: 300px; height: 200px;
     background: #6b527e;
     position: relative; cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-.flap {
+.envelope::before {
+    content: "";
+    position: absolute; top: 0; left: 0;
     width: 0; height: 0;
-    border-left: 140px solid transparent;
-    border-right: 140px solid transparent;
-    border-bottom: 90px solid #8e73a6;
-    position: absolute; top: -90px;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 110px solid #8e73a6;
 }
 
-.letter-inside { color: white; padding-top: 75px; font-family: 'Great Vibes', cursive; font-size: 20px; }
+.letter-inside { 
+    color: white; position: absolute; bottom: 30px; width: 100%;
+    font-family: 'Great Vibes', cursive; font-size: 26px; 
+}
 
-/* VINYL STYLES */
-.vinyl-player { width: 160px; height: 160px; margin: 20px auto; position: relative; }
+/* SONG GRID */
+#song-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.song-card {
+    background: #f8f5fa;
+    border: 1px solid #d1c4e9;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* VINYL */
+.vinyl-player { width: 120px; height: 120px; margin: 15px auto; position: relative; }
 .vinyl {
     width: 100%; height: 100%;
     background: radial-gradient(circle, #444 2%, #111 5%, #111 20%, #222 21%, #111 35%, #8e73a6 36%, #6b527e 48%, #000 50%);
-    border-radius: 50%; border: 3px solid #000;
+    border-radius: 50%; border: 2px solid #000;
 }
 .spin { animation: spin 3s linear infinite; }
 @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-.yt-placeholder { display: none; }
 
 /* HEARTS */
 .heart {
-    position: fixed; width: 20px; height: 20px;
-    background-color: rgba(160, 120, 255, 0.5); transform: rotate(45deg); pointer-events: none;
+    position: fixed; width: 15px; height: 15px;
+    background-color: rgba(160, 120, 255, 0.4); transform: rotate(45deg); pointer-events: none;
 }
-.heart::before, .heart::after { content: ""; position: absolute; width: 20px; height: 20px; background-color: inherit; border-radius: 50%; }
-.heart::before { top: -10px; left: 0; } .heart::after { left: -10px; top: 0; }
-@keyframes floatUp { 0% { transform: translateY(0) rotate(45deg); opacity: 1; } 100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; } }
+.heart::before, .heart::after { content: ""; position: absolute; width: 15px; height: 15px; background-color: inherit; border-radius: 50%; }
+.heart::before { top: -8px; left: 0; } .heart::after { left: -8px; top: 0; }
+@keyframes floatUp { 0% { transform: translateY(0) rotate(45deg); opacity: 1; } 100% { transform: translateY(-110vh) rotate(45deg); opacity: 0; } }
