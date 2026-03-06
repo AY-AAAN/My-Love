@@ -1,11 +1,42 @@
-let players = {};
+function openEnvelope() {
+    document.getElementById("envelope-screen").style.display = "none";
+    const main = document.getElementById("main-content");
+    main.style.display = "block";
+    setTimeout(() => { main.style.opacity = "1"; }, 50);
+    startTypewriter();
+}
 
-// 1. YouTube API Ready
+function startTypewriter() {
+    document.querySelectorAll('.typewriter').forEach(el => {
+        const text = el.getAttribute('data-text');
+        el.innerText = '';
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                el.innerText += text.charAt(i);
+                i++;
+                setTimeout(typing, 40);
+            }
+        }
+        typing();
+    });
+}
+
+function checkPassword() {
+    const pw = document.getElementById("passwordInput").value;
+    if (pw === "021026") {
+        window.location.href = "secret.html";
+    } else {
+        alert("That is not the sacred word, my love ❤️");
+    }
+}
+
+// YouTube Player Logic
+let players = {};
 function onYouTubeIframeAPIReady() {
     document.querySelectorAll('.song-card').forEach((card, index) => {
         const videoId = card.getAttribute('data-video-id');
         const placeholder = card.querySelector('.yt-placeholder');
-        if (!placeholder) return;
         const playerId = "player-" + index;
         placeholder.id = playerId;
 
@@ -18,7 +49,6 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-// 2. Play/Pause
 function togglePlay(button) {
     const playerId = button.getAttribute('data-target');
     const player = players[playerId];
@@ -40,42 +70,12 @@ function onPlayerStateChange(event, card) {
     }
 }
 
-// 3. FIX: Show Content Logic
-function openEnvelope() {
-    const env = document.getElementById("envelope-screen");
-    const main = document.getElementById("main-content");
-    if (env) env.style.display = "none";
-    if (main) {
-        main.style.display = "block";
-        main.style.opacity = "1";
-    }
-}
-
-// Auto-reveal if no envelope exists (fixes white screen on song.html)
-window.onload = function() {
-    if (!document.getElementById("envelope-screen")) {
-        const main = document.getElementById("main-content");
-        if (main) {
-            main.style.display = "block";
-            main.style.opacity = "1";
-        }
-    }
-};
-
-// 4. Hearts
-function createHeart() {
+// Hearts Effect
+setInterval(() => {
     const heart = document.createElement("div");
     heart.className = "heart";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animation = `floatUp ${5 + Math.random() * 5}s linear forwards`;
     document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 10000);
-}
-setInterval(createHeart, 800);
-
-// 5. Password
-function checkPassword() {
-    const pw = document.getElementById("passwordInput").value;
-    if (pw === "021026") window.location.href = "secret.html";
-    else alert("That is not the sacred word, my love ❤️");
-}
+    setTimeout(() => heart.remove(), 8000);
+}, 600);
