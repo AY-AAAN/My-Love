@@ -60,13 +60,6 @@ function openEnvelope() {
     document.getElementById("envelope-screen").style.display = "none";
     const main = document.getElementById("main-content");
     main.style.display = "block";
-    
-    // Optional: add fade-in effect
-    main.style.opacity = 0;
-    setTimeout(() => {
-        main.style.transition = "opacity 1s";
-        main.style.opacity = 1;
-    }, 10);
 }
 
 // 5. FLOATING LAVENDER HEARTS
