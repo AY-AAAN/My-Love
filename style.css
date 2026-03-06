@@ -1,21 +1,52 @@
-/* GLOBAL STYLES & PURPLE PARCHMENT */
+/* GLOBAL STYLES & PURPLE THEME */
 body {
     margin: 0;
     font-family: 'Cinzel', serif;
-    background-color: #f2eef5; /* Very soft lavender tint */
+    background-color: #f2eef5; 
     background-image: url("https://www.transparenttextures.com/patterns/aged-paper.png");
-    color: #3b2a4a; /* Deep plum text */
+    color: #3b2a4a;
     text-align: center;
     overflow-x: hidden;
 }
 
 .container { padding: 50px; max-width: 800px; margin: auto; }
 
+/* The "Purple" Letter Look */
 .parchment {
-    background-color: #faf7fd; /* Soft lilac white */
-    border: 2px solid #6b527e; /* Dusty purple border */
+    background-color: #e6e0f0; /* Soft Purple Letter Background */
+    border: 3px double #6b527e;
     padding: 40px;
-    box-shadow: inset 0 0 100px rgba(107, 82, 126, 0.1), 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: inset 0 0 100px rgba(107, 82, 126, 0.2), 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* ELEGANT BUTTON DESIGN */
+.buttons a, .play-btn, button {
+    display: inline-block;
+    background: #6b527e;
+    color: #ffffff !important;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 10px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    border: 1px solid #4b3a5a;
+    border-radius: 4px;
+    box-shadow: 3px 3px 0px #4b3a5a;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.buttons a:hover, .play-btn:hover, button:hover {
+    background: #8e73a6;
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px #4b3a5a;
+}
+
+.buttons a:active {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px #4b3a5a;
 }
 
 /* ENVELOPE SCREEN */
@@ -28,92 +59,38 @@ body {
 }
 
 .envelope {
-    width: 250px; height: 150px;
-    background: #6b527e; /* Dusty purple envelope */
+    width: 280px; height: 180px;
+    background: #6b527e;
     position: relative; cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .flap {
     width: 0; height: 0;
-    border-left: 125px solid transparent;
-    border-right: 125px solid transparent;
-    border-bottom: 75px solid #8e73a6; /* Lighter purple flap */
-    position: absolute; top: -75px;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-bottom: 90px solid #8e73a6;
+    position: absolute; top: -90px;
 }
 
-.letter-inside { color: white; padding-top: 60px; font-size: 14px; }
+.letter-inside { color: white; padding-top: 75px; font-family: 'Great Vibes', cursive; font-size: 20px; }
 
-/* VINYL PLAYER */
-.song-card { 
-    margin-bottom: 80px; 
-    padding-bottom: 20px; 
-    border-bottom: 1px solid rgba(107, 82, 126, 0.2); 
-}
-
-.vinyl-player {
-    margin: 20px auto;
-    width: 160px; height: 160px;
-    position: relative;
-}
-
+/* VINYL STYLES */
+.vinyl-player { width: 160px; height: 160px; margin: 20px auto; position: relative; }
 .vinyl {
     width: 100%; height: 100%;
     background: radial-gradient(circle, #444 2%, #111 5%, #111 20%, #222 21%, #111 35%, #8e73a6 36%, #6b527e 48%, #000 50%);
-    border-radius: 50%;
-    border: 3px solid #000;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    position: relative;
+    border-radius: 50%; border: 3px solid #000;
 }
-
-.vinyl::after {
-    content: "";
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 10px; height: 10px;
-    background: #f2eef5; border-radius: 50%;
-}
-
 .spin { animation: spin 3s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.yt-placeholder { display: none; }
 
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.yt-placeholder { display: none; } 
-
-/* BUTTONS */
-.play-btn {
-    background: #6b527e;
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    font-family: 'Cinzel', serif;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.play-btn:hover { background: #8e73a6; }
-
-/* FLOATING HEARTS (Lavender) */
+/* HEARTS */
 .heart {
     position: fixed; width: 20px; height: 20px;
-    background-color: rgba(160, 120, 255, 0.5); 
-    transform: rotate(45deg); pointer-events: none;
+    background-color: rgba(160, 120, 255, 0.5); transform: rotate(45deg); pointer-events: none;
 }
-.heart::before, .heart::after {
-    content: ""; position: absolute; width: 20px; height: 20px;
-    background-color: inherit; border-radius: 50%;
-}
-.heart::before { top: -10px; left: 0; }
-.heart::after { left: -10px; top: 0; }
-
-@keyframes floatUp {
-    0% { transform: translateY(0) rotate(45deg); opacity: 1; }
-    100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
-}
-
-/* TYPEWRITER */
-.ink-char { opacity: 0; transition: 0.4s; color: #4b3a5a; }
-.ink-char.show { opacity: 1; }
+.heart::before, .heart::after { content: ""; position: absolute; width: 20px; height: 20px; background-color: inherit; border-radius: 50%; }
+.heart::before { top: -10px; left: 0; } .heart::after { left: -10px; top: 0; }
+@keyframes floatUp { 0% { transform: translateY(0) rotate(45deg); opacity: 1; } 100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; } }
