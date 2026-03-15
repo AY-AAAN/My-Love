@@ -5,55 +5,69 @@
 <title>Letters of Devotion</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>
+    /* Keeps the letter content hidden until clicked */
+    .typewriter {
+        display: none; 
+        margin-top: 15px;
+        font-family: 'Great Vibes', cursive;
+        font-size: 1.5rem;
+    }
+    .letter {
+        cursor: pointer;
+        padding: 20px;
+        border-bottom: 1px solid #d4af37;
+    }
+    .letter.revealed .typewriter {
+        display: block;
+        animation: fadeIn 1.5s;
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+</style>
 </head>
-
 <body>
 
 <div class="container parchment">
 <h1>Letters of My Heart</h1>
 
-<div class="letter">
-<h2>February 19, 2026</h2>
-<p class="typewriter"
-data-text="My Honey,
+<div class="letter" onclick="this.classList.toggle('revealed')">
+    <h2>February 19, 2026</h2>
+    <p class="typewriter"
+    data-text="My Honey,
 
-Before you read the next letter, I just want to say something simple.
-What you’re about to read comes from the deepest and softest parts of my heart.
-It might be long, and it might be emotional,
-but every word is real.
+    Before you read the next letter, I just want to say something simple.
+    What you’re about to read comes from the deepest and softest parts of my heart.
+    It might be long, and it might be emotional,
+    but every word is real.
 
-You are loved.
-You are chosen.
-You are one of the greatest blessings God has given me.
+    You are loved.
+    You are chosen.
+    You are one of the greatest blessings God has given me.
 
-Always yours.">
-</p>
+    Always yours.">
+    </p>
 </div>
 
-<div class="letter">
-<h2>February 10, 2026</h2>
-<p class="typewriter"
-data-text="My Baby,
+<div class="letter" onclick="this.classList.toggle('revealed')">
+    <h2>February 10, 2026</h2>
+    <p class="typewriter"
+    data-text="My Baby,
 
-We met on January 28, 2026 —
-a day that seemed ordinary to everyone else,
-but to me, it became the quiet beginning of everything.
+    We met on January 28, 2026 —
+    a day that seemed ordinary to everyone else,
+    but to me, it became the quiet beginning of everything.
 
-If I had to search through every lifetime,
-I would still find you.
+    If I had to search through every lifetime,
+    I would still find you.
 
-Forever yours,
-Always and in all ways.">
-</p>
+    Forever yours,
+    Always and in all ways.">
+    </p>
 </div>
 
 <a href="index.html" class="back">Return Home</a>
 </div>
 
-
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
