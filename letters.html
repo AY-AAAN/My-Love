@@ -1,73 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Letters of Devotion</title>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<style>
-    /* Keeps the letter content hidden until clicked */
-    .typewriter {
-        display: none; 
-        margin-top: 15px;
-        font-family: 'Great Vibes', cursive;
-        font-size: 1.5rem;
-    }
-    .letter {
-        cursor: pointer;
-        padding: 20px;
-        border-bottom: 1px solid #d4af37;
-    }
-    .letter.revealed .typewriter {
-        display: block;
-        animation: fadeIn 1.5s;
-    }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-</style>
+    <meta charset="UTF-8">
+    <title>Letters of Devotion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Great+Vibes&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .letter-container {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px dashed #d4af37;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .letter-container:hover { background: rgba(212, 175, 55, 0.05); }
+        
+        .letter-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 1s ease, opacity 1s ease;
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.6rem;
+            color: #4a3728;
+            padding-top: 20px;
+        }
+
+        .letter-container.active .letter-content {
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+        .instruction {
+            font-size: 0.8rem;
+            color: #888;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
 
 <div class="container parchment">
-<h1>Letters of My Heart</h1>
+    <h1>Letters of My Heart</h1>
+    <p class="instruction">(Click a date to reveal the letter)</p>
 
-<div class="letter" onclick="this.classList.toggle('revealed')">
-    <h2>February 19, 2026</h2>
-    <p class="typewriter"
-    data-text="My Honey,
+    <div class="letter-container" onclick="this.classList.toggle('active')">
+        <h2>February 19, 2026</h2>
+        <div class="letter-content">
+            My Honey,<br><br>
+            Before you read the next letter, I just want to say something simple. 
+            What you’re about to read comes from the deepest and softest parts of my heart. 
+            It might be long, and it might be emotional, but every word is real.<br><br>
+            You are loved. You are chosen. You are one of the greatest blessings God has given me.<br><br>
+            Always yours.
+        </div>
+    </div>
 
-    Before you read the next letter, I just want to say something simple.
-    What you’re about to read comes from the deepest and softest parts of my heart.
-    It might be long, and it might be emotional,
-    but every word is real.
+    <div class="letter-container" onclick="this.classList.toggle('active')">
+        <h2>February 10, 2026</h2>
+        <div class="letter-content">
+            My Baby,<br><br>
+            We met on January 28, 2026 — a day that seemed ordinary to everyone else, 
+            but to me, it became the quiet beginning of everything.<br><br>
+            If I had to search through every lifetime, I would still find you.<br><br>
+            Forever yours, Always and in all ways.
+        </div>
+    </div>
 
-    You are loved.
-    You are chosen.
-    You are one of the greatest blessings God has given me.
-
-    Always yours.">
-    </p>
+    <a href="index.html" class="back">Return Home</a>
 </div>
 
-<div class="letter" onclick="this.classList.toggle('revealed')">
-    <h2>February 10, 2026</h2>
-    <p class="typewriter"
-    data-text="My Baby,
-
-    We met on January 28, 2026 —
-    a day that seemed ordinary to everyone else,
-    but to me, it became the quiet beginning of everything.
-
-    If I had to search through every lifetime,
-    I would still find you.
-
-    Forever yours,
-    Always and in all ways.">
-    </p>
-</div>
-
-<a href="index.html" class="back">Return Home</a>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
