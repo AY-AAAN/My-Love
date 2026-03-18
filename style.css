@@ -19,21 +19,26 @@ body {
     margin-bottom: 30px;
 }
 
-/* LETTER AESTHETIC & FIX */
-.letter-body {
-    text-align: left;
-    padding: 0 30px;
-}
-
+/* TYPEWRITER & TEXT WRAP FIX */
 .typewriter {
     display: block;
-    width: 100%;
+    width: 90%;          /* Keeps it within the parchment */
     margin: 20px auto;
+    white-space: normal; /* CRITICAL: This allows the text to wrap to the next line */
     word-wrap: break-word;
     overflow-wrap: break-word;
-    white-space: normal; 
-    line-height: 1.8;
+    
+    /* Letter Aesthetic */
+    line-height: 1.8;    /* Adds space between lines */
     font-size: 1.15rem;
+    text-align: left;    /* Standard letter alignment */
+    color: #3b2a4a;
+    letter-spacing: 0.5px; /* Adds tiny space between letters for readability */
+    min-height: 120px;   /* Reserves space so buttons don't move */
+}
+
+.letter-body {
+    padding: 0 20px;     /* Gives the text some "breathing room" from the borders */
 }
 
 /* BUTTONS */
