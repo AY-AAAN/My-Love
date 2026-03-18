@@ -19,42 +19,25 @@ body {
     margin-bottom: 30px;
 }
 
-/* TYPEWRITER & TEXT WRAP FIX */
-.typewriter {
-    display: block;
-    width: 90%;          /* Keeps it within the parchment */
-    margin: 20px auto;
-    white-space: normal; /* CRITICAL: This allows the text to wrap to the next line */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    
-    /* Letter Aesthetic */
-    line-height: 1.8;    /* Adds space between lines */
-    font-size: 1.15rem;
-    text-align: left;    /* Standard letter alignment */
-    color: #3b2a4a;
-    letter-spacing: 0.5px; /* Adds tiny space between letters for readability */
-    min-height: 120px;   /* Reserves space so buttons don't move */
-}
-
-.letter-body {
-    padding: 0 20px;     /* Gives the text some "breathing room" from the borders */
-}
-
-/* Fix for the secret letter visibility and spacing */
+/* Fix for visibility, wrapping, and spacing */
 .static-letter {
     display: block;
     width: 100%;
     font-family: 'Cinzel', serif;
-    font-size: 1.2rem;
-    line-height: 1.8; /* Adds breathing room between lines */
+    font-size: 1.15rem;
+    line-height: 1.8;      /* Space between lines */
     color: #3b2a4a;
-    text-align: left; /* Aligns like a real letter */
-    white-space: normal; /* Forces text to wrap to the next line */
+    text-align: left;      /* Aligns like a letter */
+    white-space: normal;   /* FORCES spaces to show and text to wrap */
     word-wrap: break-word;
     margin-top: 20px;
-    padding: 0 10px;
 }
+
+.letter-body {
+    padding: 0 20px;       /* Breathing room from borders */
+}
+
+/* Ensure the rest of your global styles remain below */
 
 /* BUTTONS */
 .buttons a, .back, button {
