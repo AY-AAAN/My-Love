@@ -41,6 +41,21 @@ body {
     padding: 0 20px;     /* Gives the text some "breathing room" from the borders */
 }
 
+/* Fix for the secret letter visibility and spacing */
+.static-letter {
+    display: block;
+    width: 100%;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    line-height: 1.8; /* Adds breathing room between lines */
+    color: #3b2a4a;
+    text-align: left; /* Aligns like a real letter */
+    white-space: normal; /* Forces text to wrap to the next line */
+    word-wrap: break-word;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
 /* BUTTONS */
 .buttons a, .back, button {
     display: inline-block;
