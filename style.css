@@ -19,7 +19,12 @@ body {
     margin-bottom: 30px;
 }
 
-/* TYPEWRITER & TEXT WRAP FIX */
+/* LETTER AESTHETIC & FIX */
+.letter-body {
+    text-align: left;
+    padding: 0 30px;
+}
+
 .typewriter {
     display: block;
     width: 100%;
@@ -27,12 +32,12 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal; 
-    line-height: 1.6;
-    font-size: 1.1rem;
+    line-height: 1.8;
+    font-size: 1.15rem;
 }
 
-/* BUTTON DESIGN */
-.buttons a, .play-btn, button, .back {
+/* BUTTONS */
+.buttons a, .back, button {
     display: inline-block;
     background: #7b5ea0;
     color: #ffffff !important;
@@ -48,12 +53,6 @@ body {
     transition: all 0.1s ease;
 }
 
-.buttons a:hover, button:hover, .back:hover {
-    background: #8e73a6;
-    transform: translateY(-2px);
-    box-shadow: 0px 8px 0px #4b3a5a;
-}
-
 /* ENVELOPE */
 #envelope-screen {
     position: fixed;
@@ -63,43 +62,21 @@ body {
     display: flex; justify-content: center; align-items: center;
     z-index: 2000;
 }
-
-.envelope {
-    width: 300px; height: 200px;
-    background: #6b527e;
-    position: relative; cursor: pointer;
-}
-
+.envelope { width: 300px; height: 200px; background: #6b527e; position: relative; cursor: pointer; }
 .envelope::before {
-    content: "";
-    position: absolute; top: 0; left: 0;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
+    content: ""; position: absolute; top: 0; left: 0;
+    border-left: 150px solid transparent; border-right: 150px solid transparent;
     border-top: 110px solid #8e73a6;
 }
+.letter-inside { color: white; position: absolute; bottom: 30px; width: 100%; font-family: 'Great Vibes', cursive; font-size: 26px; }
 
-.letter-inside { 
-    color: white; position: absolute; bottom: 30px; width: 100%;
-    font-family: 'Great Vibes', cursive; font-size: 26px; 
-}
-
-/* SONG GRID */
+/* SONG GRID & AUTO-SPIN VINYL */
 #song-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    max-height: 70vh;
-    overflow-y: auto;
 }
-
-.song-card {
-    background: #f8f5fa;
-    border: 1px solid #d1c4e9;
-    padding: 20px;
-    border-radius: 12px;
-}
-
-/* VINYL */
+.song-card { background: #f8f5fa; border: 1px solid #d1c4e9; padding: 20px; border-radius: 12px; }
 .vinyl-player { width: 100px; height: 100px; margin: 15px auto; }
 .vinyl {
     width: 100%; height: 100%;
@@ -107,14 +84,10 @@ body {
     border-radius: 50%;
     animation: spin 3s linear infinite;
 }
-
 @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
 /* HEARTS */
-.heart {
-    position: fixed; width: 15px; height: 15px;
-    background-color: rgba(160, 120, 255, 0.4); transform: rotate(45deg); pointer-events: none;
-}
+.heart { position: fixed; width: 15px; height: 15px; background-color: rgba(160, 120, 255, 0.4); transform: rotate(45deg); pointer-events: none; }
 .heart::before, .heart::after { content: ""; position: absolute; width: 15px; height: 15px; background-color: inherit; border-radius: 50%; }
 .heart::before { top: -8px; left: 0; } .heart::after { left: -8px; top: 0; }
 @keyframes floatUp { 0% { transform: translateY(0) rotate(45deg); opacity: 1; } 100% { transform: translateY(-110vh) rotate(45deg); opacity: 0; } }
