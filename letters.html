@@ -24,10 +24,12 @@
             font-size: 1.6rem;
             color: #4a3728;
             padding-top: 20px;
+            text-align: left; /* Better for reading long letters */
+            white-space: normal; /* Ensures text wraps properly */
         }
 
         .letter-container.active .letter-content {
-            max-height: 1000px;
+            max-height: 2000px; /* Increased for the long March letter */
             opacity: 1;
         }
 
@@ -35,16 +37,16 @@
             font-size: 0.8rem;
             color: #888;
             font-style: italic;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
 
-
-    <div class="container parchment">
+<div class="container parchment">
     <h1>Letters of My Heart</h1>
     <p class="instruction">(Click a date to reveal the letter)</p>
-    
+
     <div class="letter-container" onclick="this.classList.toggle('active')">
         <h2>February 10, 2026</h2>
         <div class="letter-content">
@@ -75,23 +77,21 @@
             It has been a month and 8 days since we have been dating.
             What an amazing month has it been ever since I met you my loving wife. 
             Did you know us meeting wasnt easy because the chances for 2 people to meet is 0.00417%.
-            Even if we had the chance to meet falling in love with one another is a lower chance of 0.0000173%.
+            Even if we had the chance to meet falling in love with one another is a lower chance of 0.0000173%.<br><br>
             Why am I giving you these numbers well I wanted to show you that in a world with billions of people.
             We were given the chance to meet and within those people I had my heart, mind, eyes, and soul on you.
             I want you to know that you are so special to me my love, you are the only one I mind losing parts of me.
-            You are the only one who crosses my mind constantly throughout the day.
+            You are the only one who crosses my mind constantly throughout the day.<br><br>
             You also make me laugh and smile without trying, and make me calm down when im getting mad at people or things.
             I can't explain how much you mean to me but you're the only one im scared of losing.
-            I want you to keep you in my life and make you my wife till the end of time.
-            It might be long, and it might be emotional, but every word is real.<br><br>
+            I want you to keep you in my life and make you my wife till the end of time.<br><br>
             You are loved. You are chosen. You are one of the greatest blessings God has given me.<br><br>
             Always yours.
         </div>
     </div>
-        
-    
-    <a href="index.html" class="back">Return Home</a>
-</div>
 
-</body>
+    <div style="margin-top: 50px;">
+        <a href="index.html" class="back">Return Home</a>
+    </div>
+</div> </body>
 </html>
